@@ -5,7 +5,7 @@ contract Ludo {
 
     struct Player {
     address playerAddress;
-    uint256[] tokenPositions;  // Positions of the tokens on the board
+    uint256[] tokenPositions; 
     bool stillPlaying;
 }
 
