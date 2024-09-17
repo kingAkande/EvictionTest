@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
+
 interface IUniswapV2Router {
     function swapExactTokensForTokens(
         uint amountIn,
@@ -8,7 +9,7 @@ interface IUniswapV2Router {
         address to,
         uint deadline
     ) external returns (uint[] memory amounts);
-    
+
     function swapTokensForExactTokens(
         uint amountOut,
         uint amountInMax,
@@ -17,11 +18,12 @@ interface IUniswapV2Router {
         uint deadline
     ) external returns (uint[] memory amounts);
 
-    function swapTokensForExactETH(
-        uint amountOut, uint amountInMax,
+    function swapExactETHForTokens(
+        uint amountOutMin,
         address[] calldata path,
-        address to, uint deadline
-    ) external returns (uint[] memory amounts);
+        address to,
+        uint deadline
+    ) external payable returns (uint[] memory amounts);
 
     function addLiquidity(
         address tokenA,
@@ -33,4 +35,22 @@ interface IUniswapV2Router {
         address to,
         uint deadline
     ) external returns (uint amountA, uint amountB, uint liquidity);
+
+    function getAmountsIn(
+        uint amountOut,
+        address[] memory path
+    ) external view returns (uint[] memory amounts);
+
+    function getAmountsOut(
+        uint amountIn,
+        address[] memory path
+    ) external view returns (uint[] memory amounts);
+
+    function swapTokensForExactETH(
+        uint amountOut,
+        uint amountInMax,
+        address[] calldata path,
+        address to,
+        uint deadline
+    ) external returns (uint[] memory amounts);
 }
