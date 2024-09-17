@@ -3,15 +3,15 @@ const helpers = require("@nomicfoundation/hardhat-network-helpers");
 
 async function main() {
     const ROUTER_ADDRESS = "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D";
-    const USDC = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
-    const SHFL = "0x6B175474E89094C44Da98b954EedeAC495271d0F";
+    const USDC = "0xdAC17F958D2ee523a2206206994597C13D831ec7";
+    const SHFL = "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9";
 
-    const TOKEN_HOLDER = "0xf584F8728B874a6a5c7A8d4d387C9aae9172D621";
+    const TOKEN_HOLDER = "0xF977814e90dA44bFA03b6295A0616a897441aceC";
 
     await helpers.impersonateAccount(TOKEN_HOLDER);
     const impersonatedSigner = await ethers.getSigner(TOKEN_HOLDER);
 
-    const   amountOut = ethers.parseUnits("1000", 18);
+    const   amountOut = ethers.parseUnits("1000", 6);
   
     const   amountInMax = ethers.parseUnits("200", 18);
 
