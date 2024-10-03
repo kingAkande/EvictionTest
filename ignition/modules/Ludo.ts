@@ -10,3 +10,9 @@ const LudoModule = buildModule("LudoModule", (m) => {
 });
 
 export default LudoModule;
+
+
+/**
+ * LudoModule#Ludo - 0xe088bDa82042B82ABAA069D781d96CD74991CF27
+ *  - https://sepolia-blockscout.lisk.com//address/0xe088bDa82042B82ABAA069D781d96CD74991CF27#code
+ */
